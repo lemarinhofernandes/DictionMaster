@@ -76,7 +76,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-//        SearchViewModel()
         setupUI()
     }
     
@@ -108,9 +107,9 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        let tapgesture = UITapGestureRecognizer(target: self, action: #selector (hideKeyboard))
-        tapgesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapgesture)
+//        let tapgesture = UITapGestureRecognizer(target: self, action: #selector (hideKeyboard))
+//        tapgesture.cancelsTouchesInView = false
+//        self.view.addGestureRecognizer(tapgesture)
         
     }
     
@@ -120,7 +119,9 @@ class ViewController: UIViewController {
 extension ViewController {
     @objc
     func handleSeach() {
-        viewModel.testeAudio()
+        viewModel.getDefinition(for: self.inputTextField.text ?? "")
+        self.view.endEditing(true)
+
 //        hideKeyboard()
     }
     
