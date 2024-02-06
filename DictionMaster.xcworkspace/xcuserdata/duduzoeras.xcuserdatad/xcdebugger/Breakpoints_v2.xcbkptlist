@@ -103,22 +103,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96DAC49D-8C64-48C0-B627-23687D5E6BC5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DictionMaster/ViewModels/SearchViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "shouldMakeRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2204D1E8-DF98-41F4-837D-EFBAF3643CBC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -174,8 +158,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +174,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -225,26 +209,8 @@
                   endingLineNumber = "24"
                   offsetFromSymbolStart = "396">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A189D5E6-869C-45AD-A93C-D5777C1DE540"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DictionMaster/Repositories/SearchRepository.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "get(_:completion:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "A189D5E6-869C-45AD-A93C-D5777C1DE540 - aac345c42e7120da"
+                  uuid = "108D9F1F-AC33-4333-9109-D39F0134994F - aac345c42e712167"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -254,12 +220,12 @@
                   urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "208">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "400">
                </Location>
                <Location
-                  uuid = "A189D5E6-869C-45AD-A93C-D5777C1DE540 - aac345c42e7120b9"
+                  uuid = "108D9F1F-AC33-4333-9109-D39F0134994F - aac345c42e712167"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -269,9 +235,9 @@
                   urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "208">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "416">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -279,35 +245,35 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E67EC555-380B-4312-969B-D36733E08122"
+            uuid = "6510FB75-606C-4CAB-821E-AE480A77D6BE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E67EC555-380B-4312-969B-D36733E08122 - a2e52d46c4318824"
+                  uuid = "6510FB75-606C-4CAB-821E-AE480A77D6BE - aac345c42e7121a1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Alamofire.AFError&gt;) -&gt; () in DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "DictionMaster"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "364">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "508">
                </Location>
                <Location
-                  uuid = "E67EC555-380B-4312-969B-D36733E08122 - a2e52d46c4318824"
+                  uuid = "6510FB75-606C-4CAB-821E-AE480A77D6BE - a2e52d46c431f7cb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -317,9 +283,88 @@
                   urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "300">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "6510FB75-606C-4CAB-821E-AE480A77D6BE - aac345c42e7121a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "524">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D968FCFF-B6E4-41CC-9A56-35920E117EDB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DictionMaster/Repositories/SearchRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "get(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A49F7722-E1FF-4FED-AD05-C10CD04E1F39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DictionMaster/Repositories/SearchRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "get(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A49F7722-E1FF-4FED-AD05-C10CD04E1F39 - aac345c42e715f36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1064">
+               </Location>
+               <Location
+                  uuid = "A49F7722-E1FF-4FED-AD05-C10CD04E1F39 - aac345c42e715f57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1124">
                </Location>
             </Locations>
          </BreakpointContent>

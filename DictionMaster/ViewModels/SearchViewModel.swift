@@ -8,30 +8,38 @@
 import Foundation
 import AVKit
 
+protocol ViewModelDelegate {
+    func callDefinitionViewController(with definition: DefinitionModel)
+    func callPaywallViewController()
+}
+
 class SearchViewModel {
     var player: AVPlayer?
     var playerItem:AVPlayerItem?
     private let repository = SearchRepository()
+    var delegate: ViewModelDelegate?
     
     init() {
         player = AVPlayer()
     }
     
     func getDefinition(for term: String) {
-        switch shouldMakeRequest() {
-        case true:
-            repository.get(term, completion: { [weak self] result in
-                switch result {
-                case .success(let value):
-                    print(value)
-                    break
-                case .failure(let error):
-                    print(error)
-                    break
-                }
-            })
-        case false:
-            print("mandar para o paywall")
+        self.repository.get(term, completion: { [weak self] result in
+            switch result {
+            case .success(let value):
+                self?.delegate?.callDefinitionViewController(with: value)
+            case .failure(let error):
+                self?.handleError(with: error)
+            }
+        })
+    }
+    
+    func handleError(with error: ErrorsEnum) {
+        switch error {
+        case .NetworkError:
+            print("AF network error")
+        case .LimitError:
+            delegate?.callPaywallViewController()
         }
     }
     
@@ -58,31 +66,4 @@ class SearchViewModel {
             print("AVAudioPlayer init failed")
         }
     }
-    
-    private func shouldMakeRequest() -> Bool {
-        let requestCache = UserDefaults.standard.codableObject(dataType: RequestCache.self, key: nil)
-        let timesCalled = requestCache?.timesCalled ?? 0
-        
-        guard let cache = requestCache else {
-            increaseRequestCall(1)
-            return true
-        }
-        
-        if timesCalled >= 5 {
-            return false
-        }
-        
-        increaseRequestCall(timesCalled+1)
-        return true
-    }
-    
-    private func increaseRequestCall(_ timesCalled: Int) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d.M.yyyy"
-        let date = dateFormatter.string(from: Date())
-
-        let codableObject = RequestCache(date: date, timesCalled: timesCalled)
-        UserDefaults.standard.setCodableObject(codableObject, key: nil)
-    }
-    
 }

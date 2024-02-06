@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  DictionMaster
 //
 //  Created by Luís Eduardo Marinho Fernandes on 05/02/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     //MARK: - Views
     private lazy var languageLabel: UILabel = {
@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.viewModel.delegate = self
         setupUI()
     }
     
@@ -107,22 +108,32 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-//        let tapgesture = UITapGestureRecognizer(target: self, action: #selector (hideKeyboard))
-//        tapgesture.cancelsTouchesInView = false
-//        self.view.addGestureRecognizer(tapgesture)
+        //        let tapgesture = UITapGestureRecognizer(target: self, action: #selector (hideKeyboard))
+        //        tapgesture.cancelsTouchesInView = false
+        //        self.view.addGestureRecognizer(tapgesture)
         
     }
     
 }
 
+//MARK: - Delegates
+extension MainViewController: ViewModelDelegate {
+    func callPaywallViewController() {
+        self.navigationController?.pushViewController(PaywallViewController(), animated: true)
+    }
+    
+    func callDefinitionViewController(with definition: DefinitionModel) {
+        self.navigationController?.pushViewController(DefinitionViewController("\(definition)"), animated: true)
+    }
+    
+}
+
 //MARK: - Helpers
-extension ViewController {
+extension MainViewController {
     @objc
     func handleSeach() {
-        viewModel.getDefinition(for: self.inputTextField.text ?? "")
         self.view.endEditing(true)
-
-//        hideKeyboard()
+        self.viewModel.getDefinition(for: self.inputTextField.text ?? "")
     }
     
     @objc
@@ -132,12 +143,12 @@ extension ViewController {
     
     @objc
     func textFieldDidChange() {
-                switch self.inputTextField.hasText {
-                case true:
-                    self.searchButton.isHidden = false
-                case false:
-                    self.searchButton.isHidden = true
-                }
+        switch self.inputTextField.hasText {
+        case true:
+            self.searchButton.isHidden = false
+        case false:
+            self.searchButton.isHidden = true
+        }
     }
     
     @objc
@@ -153,9 +164,6 @@ extension ViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= 100
-            }
-            UIView.animate(withDuration: animationDuration) {
-                self.view.layoutIfNeeded()
             }
         }
         
