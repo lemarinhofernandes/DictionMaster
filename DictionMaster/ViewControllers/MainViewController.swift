@@ -107,11 +107,6 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        //        let tapgesture = UITapGestureRecognizer(target: self, action: #selector (hideKeyboard))
-        //        tapgesture.cancelsTouchesInView = false
-        //        self.view.addGestureRecognizer(tapgesture)
-        
     }
     
 }
@@ -123,7 +118,7 @@ extension MainViewController: ViewModelDelegate {
     }
     
     func callDefinitionViewController(with definition: DefinitionModel) {
-        self.navigationController?.pushViewController(DefinitionViewController("\(definition)"), animated: true)
+        self.navigationController?.pushViewController(DefinitionViewController(definition[0]), animated: true)
     }
     
 }

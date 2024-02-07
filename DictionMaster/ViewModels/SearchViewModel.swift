@@ -19,6 +19,8 @@ class SearchViewModel {
     private let repository = SearchRepository()
     var delegate: ViewModelDelegate?
     
+    public static let shared = SearchViewModel()
+    
     init() {
         player = AVPlayer()
     }
@@ -43,9 +45,9 @@ class SearchViewModel {
         }
     }
     
-    func playAudio() {
-        let url = URL(string: "https://api.dictionaryapi.dev/media/pronunciations/en/hello-uk.mp3")!
-        print("playing \(url)")
+    func playAudio(with url: String) {
+        let optionalUrl = URL(string: url)
+        guard let url = optionalUrl else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
