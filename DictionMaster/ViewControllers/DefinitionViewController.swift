@@ -8,6 +8,7 @@
 import UIKit
 
 class DefinitionViewController: UIViewController {
+    weak var coordinator: MainCoordinator?
     
     private let scrollView: UIScrollView = {
         let e = UIScrollView()
@@ -17,7 +18,8 @@ class DefinitionViewController: UIViewController {
     
     private let wordLabel: UILabel = {
         let e = UILabel()
-        e.font = UIFont.systemFont(ofSize: 45)
+        e.font = UIFont.DMBold45()
+        e.textColor = .DMstandardWord()
         e.contentMode = .left
         e.textAlignment = .left
         e.textColor = .black
@@ -26,7 +28,8 @@ class DefinitionViewController: UIViewController {
     
     private let pronouciationLabel: UILabel = {
         let e = UILabel()
-        e.font = UIFont.systemFont(ofSize: 22)
+        e.font = UIFont.DMBold22()
+        e.textColor = .DMalternativeWord()
         e.textColor = .black
         return e
     }()
@@ -36,7 +39,7 @@ class DefinitionViewController: UIViewController {
         e.setImage(UIImage(named: "audio-speaker-on"), for: .normal)
         e.contentMode = .scaleAspectFit
         e.layer.masksToBounds = true
-        e.backgroundColor = .blue
+        e.backgroundColor = .DMButton()
         e.heightAnchor.constraint(equalToConstant: 46).isActive = true
         e.widthAnchor.constraint(equalToConstant: 46).isActive = true
         e.layer.cornerRadius = 23
@@ -45,6 +48,7 @@ class DefinitionViewController: UIViewController {
         return e
     }()
     
+    /// aqui eu poderia ter usado uma tableview, mas como nao teria nenhuma interação com as celulas, optei pela stackview
     private let definitionsStack: UIStackView = {
         let e = UIStackView()
         e.axis = .vertical
@@ -57,12 +61,12 @@ class DefinitionViewController: UIViewController {
     private var soundUrl: String?
     private var definitionIndex = 0
     
-    convenience init(_ value: DefinitionModelElement) {
+    convenience init(_ value: DefinitionModelElement, url soundUrl: String) {
         self.init(nibName:nil, bundle:nil)
         
         self.wordLabel.text = value.word
         self.pronouciationLabel.text = value.phonetic
-        handleUrl(phonetics: value.phonetics)
+        self.soundUrl = soundUrl
         
         value.meanings?.forEach({ meaning in
             configureContainerView(partOfSpeech: meaning.partOfSpeech, definition: meaning.definitions)
@@ -158,19 +162,11 @@ extension DefinitionViewController {
         SearchViewModel.shared.playAudio(with: url)
     }
     
-    func handleUrl(phonetics: [Phonetic]?) {
-        phonetics?.forEach {
-            if let phonetic = $0.audio, !phonetic.isEmpty {
-                self.soundUrl = phonetic
-            }
-        }
-    }
-    
 }
 
 extension DefinitionViewController: NewSearchDelegate {
     func popScreen() {
-        self.navigationController?.popViewController(animated: true)
+        self.coordinator?.popToRoot()
     }
     
 }

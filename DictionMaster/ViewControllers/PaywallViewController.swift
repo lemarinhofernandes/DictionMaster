@@ -8,6 +8,7 @@
 import UIKit
 
 class PaywallViewController: UIViewController {
+    weak var coordinator: MainCoordinator?
     
     private let scrollView: UIScrollView = {
         let e = UIScrollView()
@@ -43,7 +44,8 @@ class PaywallViewController: UIViewController {
         e.numberOfLines = 0
         e.contentMode = .center
         e.textAlignment = .center
-        e.font = UIFont.systemFont(ofSize: 20)
+        e.textColor = .DMstandardWord()
+        e.font = UIFont.DMBold20()
         return e
     }()
     
@@ -53,7 +55,8 @@ class PaywallViewController: UIViewController {
         e.numberOfLines = 0
         e.contentMode = .center
         e.textAlignment = .center
-        e.font = UIFont.systemFont(ofSize: 16)
+        e.font = UIFont.DMBold16()
+        e.textColor = .DMstandardWord()
         return e
     }()
     
@@ -61,7 +64,8 @@ class PaywallViewController: UIViewController {
         let e = UIButton()
         e.translatesAutoresizingMaskIntoConstraints = false
         e.setTitle("SUBSCRIBE", for: .normal)
-        e.backgroundColor = .blue
+        e.backgroundColor = .DMButton()
+        e.titleLabel?.font = .DMBold18()
         e.contentMode = .center
         e.layer.cornerRadius = 14
         e.heightAnchor.constraint(equalToConstant: 64).isActive = true
@@ -143,6 +147,6 @@ class PaywallViewController: UIViewController {
 extension PaywallViewController {
     @objc
     func handleSubscribe() {
-        self.navigationController?.popViewController(animated: true)
+        coordinator?.popToRoot()
     }
 }

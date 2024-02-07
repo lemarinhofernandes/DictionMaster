@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13342D52B74033D002200A9 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C13342D32B74033D002200A9 /* SF-Pro-Rounded-Regular.otf */; };
+		C13342D62B74033D002200A9 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C13342D42B74033D002200A9 /* SF-Pro-Rounded-Bold.otf */; };
+		C13342D82B7404C8002200A9 /* DMFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342D72B7404C8002200A9 /* DMFonts.swift */; };
+		C13342DA2B7406D6002200A9 /* DMColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342D92B7406D6002200A9 /* DMColors.swift */; };
 		C1ACD5312B713E5C009FC2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5302B713E5C009FC2D9 /* AppDelegate.swift */; };
 		C1ACD5332B713E5C009FC2D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5322B713E5C009FC2D9 /* SceneDelegate.swift */; };
 		C1ACD5352B713E5C009FC2D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5342B713E5C009FC2D9 /* MainViewController.swift */; };
@@ -22,12 +26,18 @@
 		C1ACD55B2B72EACC009FC2D9 /* ErrorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */; };
 		C1ACD55E2B73260D009FC2D9 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55D2B73260D009FC2D9 /* DefinitionsView.swift */; };
 		C1ACD5602B73AFED009FC2D9 /* NewSearchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */; };
+		C1ACD5632B73E90B009FC2D9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5622B73E90A009FC2D9 /* MainCoordinator.swift */; };
+		C1ACD5652B73E93D009FC2D9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5642B73E93D009FC2D9 /* Coordinator.swift */; };
 		E73C9CC110ACE48DA78279A8 /* Pods_DictionMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11D576CCDD7719201C1344 /* Pods_DictionMaster.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19ECAFD067DD3F5A92DD7755 /* Pods-DictionMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionMaster.release.xcconfig"; path = "Target Support Files/Pods-DictionMaster/Pods-DictionMaster.release.xcconfig"; sourceTree = "<group>"; };
 		6763C28FF9DF24AF22030DF8 /* Pods-DictionMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionMaster.debug.xcconfig"; path = "Target Support Files/Pods-DictionMaster/Pods-DictionMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		C13342D32B74033D002200A9 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
+		C13342D42B74033D002200A9 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		C13342D72B7404C8002200A9 /* DMFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFonts.swift; sourceTree = "<group>"; };
+		C13342D92B7406D6002200A9 /* DMColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMColors.swift; sourceTree = "<group>"; };
 		C1ACD52D2B713E5B009FC2D9 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1ACD5302B713E5C009FC2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1ACD5322B713E5C009FC2D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +55,8 @@
 		C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsEnum.swift; sourceTree = "<group>"; };
 		C1ACD55D2B73260D009FC2D9 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
 		C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchUIView.swift; sourceTree = "<group>"; };
+		C1ACD5622B73E90A009FC2D9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C1ACD5642B73E93D009FC2D9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EA11D576CCDD7719201C1344 /* Pods_DictionMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +110,7 @@
 		C1ACD52F2B713E5C009FC2D9 /* DictionMaster */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACD5612B73E8E6009FC2D9 /* Coordinators */,
 				C1ACD5502B72A133009FC2D9 /* Common */,
 				C1ACD54D2B72A11E009FC2D9 /* Models */,
 				C1ACD54B2B729147009FC2D9 /* Repositories */,
@@ -140,8 +153,12 @@
 		C1ACD5502B72A133009FC2D9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACD5662B73F901009FC2D9 /* Fonts */,
 				C1ACD5512B72A142009FC2D9 /* UserDefaultsExtension.swift */,
 				C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */,
+				C1ACD5642B73E93D009FC2D9 /* Coordinator.swift */,
+				C13342D92B7406D6002200A9 /* DMColors.swift */,
+				C13342D72B7404C8002200A9 /* DMFonts.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -164,6 +181,23 @@
 				C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C1ACD5612B73E8E6009FC2D9 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C1ACD5622B73E90A009FC2D9 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		C1ACD5662B73F901009FC2D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C13342D42B74033D002200A9 /* SF-Pro-Rounded-Bold.otf */,
+				C13342D32B74033D002200A9 /* SF-Pro-Rounded-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +262,8 @@
 			files = (
 				C1ACD53D2B713E5F009FC2D9 /* LaunchScreen.storyboard in Resources */,
 				C1ACD53A2B713E5F009FC2D9 /* Assets.xcassets in Resources */,
+				C13342D52B74033D002200A9 /* SF-Pro-Rounded-Regular.otf in Resources */,
+				C13342D62B74033D002200A9 /* SF-Pro-Rounded-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +316,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13342DA2B7406D6002200A9 /* DMColors.swift in Sources */,
 				C1ACD55B2B72EACC009FC2D9 /* ErrorsEnum.swift in Sources */,
+				C1ACD5632B73E90B009FC2D9 /* MainCoordinator.swift in Sources */,
+				C1ACD5652B73E93D009FC2D9 /* Coordinator.swift in Sources */,
 				C1ACD5542B72A2FF009FC2D9 /* DefinitionModel.swift in Sources */,
 				C1ACD5352B713E5C009FC2D9 /* MainViewController.swift in Sources */,
 				C1ACD54F2B72A12D009FC2D9 /* RequestCache.swift in Sources */,
@@ -290,6 +329,7 @@
 				C1ACD5312B713E5C009FC2D9 /* AppDelegate.swift in Sources */,
 				C1ACD5472B72909B009FC2D9 /* SearchRepository.swift in Sources */,
 				C1ACD5452B727686009FC2D9 /* SearchViewModel.swift in Sources */,
+				C13342D82B7404C8002200A9 /* DMFonts.swift in Sources */,
 				C1ACD5332B713E5C009FC2D9 /* SceneDelegate.swift in Sources */,
 				C1ACD5592B72E9FF009FC2D9 /* PaywallViewController.swift in Sources */,
 				C1ACD5602B73AFED009FC2D9 /* NewSearchUIView.swift in Sources */,

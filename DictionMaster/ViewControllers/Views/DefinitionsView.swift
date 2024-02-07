@@ -12,7 +12,8 @@ class DefinitionsView: UIView {
     private let definitionLabel: UILabel = {
         let e = UILabel()
         e.numberOfLines = 0
-        e.font = UIFont.boldSystemFont(ofSize: 16)
+        e.font = UIFont.DMBold16()
+        e.textColor = .DMstandardWord()
         return e
     }()
     
@@ -60,18 +61,13 @@ class DefinitionsView: UIView {
     
     func setupStackSubviews(example: String?) {
         guard let example = example else { return }
-//        var group: [UILabel] = []
-//        for i in 0..<9 {
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = "•\(example)"
             label.numberOfLines = 0
-            label.font = UIFont.systemFont(ofSize: 16)
+            label.font = UIFont.DMRegular16()
+        label.textColor = .DMstandardWord()
             examplesStack.addArrangedSubview(label)
-            
-//            group.append(label)
-//        }
-//        group.forEach { examplesStack.addArrangedSubview($0) }
     }
     
 }

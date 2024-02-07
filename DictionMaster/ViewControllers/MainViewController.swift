@@ -8,12 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    weak var coordinator: MainCoordinator?
     
     //MARK: - Views
     private lazy var languageLabel: UILabel = {
         let e = UILabel()
         e.text = "ENGLISH"
-        e.font = UIFont.systemFont(ofSize: 18)
+        e.textColor = .DMstandardWord()
+        e.font = UIFont.DMRegular18()
         e.textColor = .black
         e.translatesAutoresizingMaskIntoConstraints = false
         return e
@@ -27,8 +29,6 @@ class MainViewController: UIViewController {
         return e
     }()
     
-    
-    //encaspular numa paddingView
     private lazy var vStack: UIStackView = {
         let e = UIStackView()
         e.distribution = .equalCentering
@@ -48,7 +48,8 @@ class MainViewController: UIViewController {
         e.placeholder = "Type a word"
         e.contentMode = .center
         e.textAlignment = .center
-        e.font = UIFont.systemFont(ofSize: 32)
+        e.textColor = .DMstandardWord()
+        e.font = UIFont.DMBold32()
         e.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         return e
     }()
@@ -57,7 +58,8 @@ class MainViewController: UIViewController {
         let e = UIButton()
         e.translatesAutoresizingMaskIntoConstraints = false
         e.setTitle("SEARCH", for: .normal)
-        e.backgroundColor = .blue
+        e.titleLabel?.font = UIFont.DMBold18()
+        e.backgroundColor = .DMButton()
         e.contentMode = .center
         e.layer.cornerRadius = 14
         e.isHidden = true
@@ -75,12 +77,12 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         self.viewModel.delegate = self
         setupUI()
     }
     
     func setupUI() {
+        self.view.backgroundColor = .white
         view.addSubview(inputTextField)
         view.addSubview(searchButton)
         view.addSubview(vStack)
@@ -114,17 +116,15 @@ class MainViewController: UIViewController {
 //MARK: - Delegates
 extension MainViewController: ViewModelDelegate {
     func displayAlert(with text: String) {
-        let alert = UIAlertController(title: "Warning", message: text, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        coordinator?.displayErrorAlert(with: text)
     }
     
     func callPaywallViewController() {
-        self.navigationController?.pushViewController(PaywallViewController(), animated: true)
+        coordinator?.goToPaywall()
     }
     
     func callDefinitionViewController(with definition: DefinitionModel) {
-        self.navigationController?.pushViewController(DefinitionViewController(definition[0]), animated: true)
+        coordinator?.goToDefinitions(with: definition)
     }
     
 }
@@ -157,14 +157,14 @@ extension MainViewController {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         let keyboardheight = keyboardSize.cgRectValue.height
-        bottomButtonConstraint.constant = +80 - keyboardheight
-        languageTopConstraint.constant = +100
+        bottomButtonConstraint.constant = +108 - keyboardheight
+        languageTopConstraint.constant = +128
         
         let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= 100
+                self.view.frame.origin.y -= 128
             }
         }
         

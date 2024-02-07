@@ -19,6 +19,7 @@ class SearchViewModel {
     var playerItem:AVPlayerItem?
     private let repository = SearchRepository()
     var delegate: ViewModelDelegate?
+    weak var coordinator: MainCoordinator?
     
     public static let shared = SearchViewModel()
     
@@ -49,12 +50,6 @@ class SearchViewModel {
     func playAudio(with url: String) {
         let optionalUrl = URL(string: url)
         guard let url = optionalUrl else { return }
-        
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-//        } catch {
-//            print("AVAudioSessionCategoryPlayback not work")
-//        }
         
         do {
             self.playerItem = AVPlayerItem(url: url)

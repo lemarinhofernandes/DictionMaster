@@ -16,7 +16,7 @@ class NewSearchUIView: UIView {
     
     private let separator: UIView = {
         let e = UIView()
-        e.backgroundColor = .systemGray4
+        e.backgroundColor = .DMstandardBackground()
         e.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return e
     }()
@@ -30,13 +30,14 @@ class NewSearchUIView: UIView {
         let e = UILabel()
         e.font = UIFont.systemFont(ofSize: 24)
         e.text = "That's it for `education`!"
-        e.textColor = .black
+        e.textColor = .DMstandardWord()
+        e.font = UIFont.DMBold24()
         return e
     }()
     
     private let newSearchSubtitle: UILabel = {
         let e = UILabel()
-        e.font = UIFont.systemFont(ofSize: 16)
+        e.font = UIFont.DMRegular16()
         e.text = "Try another search now"
         e.textColor = .black
         return e
@@ -46,7 +47,8 @@ class NewSearchUIView: UIView {
         let e = UIButton()
         e.translatesAutoresizingMaskIntoConstraints = false
         e.setTitle("NEW SEARCH", for: .normal)
-        e.backgroundColor = .blue
+        e.titleLabel?.font = UIFont.DMBold18()
+        e.backgroundColor = .DMButton()
         e.contentMode = .center
         e.layer.cornerRadius = 14
         e.heightAnchor.constraint(equalToConstant: 64).isActive = true
