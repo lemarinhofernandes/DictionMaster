@@ -8,7 +8,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    weak var coordinator: MainCoordinator?
     
     //MARK: - Views
     private let backgroundView: UIView = {
@@ -72,13 +71,23 @@ class MainViewController: UIViewController {
         return e
     }()
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let e = UIActivityIndicatorView(style: .medium)
+        e.translatesAutoresizingMaskIntoConstraints = false
+        e.color = .white
+        return e
+    }()
+    
     
     //MARK: - Properties
     private var term: String?
     private var bottomButtonConstraint = NSLayoutConstraint()
     private var languageTopConstraint = NSLayoutConstraint()
     private let viewModel = SearchViewModel()
+    weak var coordinator: MainCoordinator?
     
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.delegate = self
@@ -89,14 +98,16 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    //MARK: - Methods
     func setupUI() {
         self.view.backgroundColor = .white
         
+        searchButton.addSubview(activityIndicator)
+        backgroundView.addSubview(vStack)
         [inputTextField, searchButton, backgroundView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
-        backgroundView.addSubview(vStack)
         
         NSLayoutConstraint.activate([
             backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -115,6 +126,8 @@ class MainViewController: UIViewController {
             searchButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 18),
             searchButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -18),
             
+            activityIndicator.centerYAnchor.constraint(equalTo: searchButton.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: searchButton.centerXAnchor),
         ])
         
         bottomButtonConstraint = searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -127,11 +140,21 @@ class MainViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
 }
 
 //MARK: - Delegates
 extension MainViewController: ViewModelDelegate {
+    func toggleIndicator(for isLoading: Bool) {
+        switch isLoading {
+        case true:
+            searchButton.setTitle("", for: .normal)
+            activityIndicator.startAnimating()
+        case false:
+            activityIndicator.stopAnimating()
+            searchButton.setTitle("SEARCH", for: .normal)
+        }
+    }
+    
     func displayAlert(with text: String) {
         coordinator?.displayErrorAlert(with: text)
     }
@@ -152,11 +175,7 @@ extension MainViewController {
     func handleSeach() {
         self.view.endEditing(true)
         self.viewModel.getDefinition(for: self.inputTextField.text ?? "")
-    }
-    
-    @objc
-    func hideKeyboard() {
-        self.view.endEditing(true)
+        
     }
     
     @objc

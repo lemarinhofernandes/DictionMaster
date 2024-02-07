@@ -8,11 +8,16 @@
 import UIKit
 
 class DefinitionViewController: UIViewController {
-    weak var coordinator: MainCoordinator?
-    
+    //MARK: - Views
     private let scrollView: UIScrollView = {
         let e = UIScrollView()
         e.showsVerticalScrollIndicator = false
+        return e
+    }()
+    
+    private let marginView: UIView = {
+        let e = UIView()
+        e.heightAnchor.constraint(equalToConstant: 60).isActive = true
         return e
     }()
     
@@ -30,7 +35,6 @@ class DefinitionViewController: UIViewController {
         let e = UILabel()
         e.font = UIFont.DMBold22()
         e.textColor = .DMalternativeWord()
-        e.textColor = .black
         return e
     }()
     
@@ -58,19 +62,22 @@ class DefinitionViewController: UIViewController {
     
     private let newSearchView = NewSearchUIView()
     
+    //MARK: - Properties
     private var soundUrl: String?
     private var definitionIndex = 0
+    weak var coordinator: MainCoordinator?
     
+    //MARK: - Lifecycle
     convenience init(_ value: DefinitionModelElement, url soundUrl: String) {
         self.init(nibName:nil, bundle:nil)
+        let title = value.word ?? ""
         
-        self.wordLabel.text = value.word
+        self.wordLabel.text = title.capitalized
         self.pronouciationLabel.text = value.phonetic
         self.soundUrl = soundUrl
+        self.newSearchView.setTitleText(with: title)
         
-        value.meanings?.forEach({ meaning in
-            configureContainerView(partOfSpeech: meaning.partOfSpeech, definition: meaning.definitions)
-        })
+        configureMeanings(with: value.meanings)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -91,6 +98,7 @@ class DefinitionViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    //MARK: - Methods
     private func setupUI() {
         view.backgroundColor = .white
         newSearchView.delegate = self
@@ -111,9 +119,12 @@ class DefinitionViewController: UIViewController {
             newSearchView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
         ])
         
+        setupScrollView()
         
-        
-        [wordLabel, soundButton, pronouciationLabel, definitionsStack].forEach {
+    }
+    
+    private func setupScrollView() {
+        [wordLabel, soundButton, pronouciationLabel, definitionsStack, marginView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview($0)
         }
@@ -131,9 +142,25 @@ class DefinitionViewController: UIViewController {
             definitionsStack.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             definitionsStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             definitionsStack.topAnchor.constraint(equalTo: soundButton.bottomAnchor, constant: 25),
-            definitionsStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             definitionsStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            marginView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            marginView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            marginView.topAnchor.constraint(equalTo: definitionsStack.bottomAnchor),
+            marginView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
         ])
+    }
+    
+}
+
+//MARK: - Helpers
+extension DefinitionViewController {
+    private func configureMeanings(with meanings: [Meaning]?) {
+        guard let meanings = meanings else { return }
+        
+        meanings.forEach({ meaning in
+            configureContainerView(partOfSpeech: meaning.partOfSpeech, definition: meaning.definitions)
+        })
     }
     
     private func configureContainerView(partOfSpeech: String?, definition: [Definition]?) {
@@ -150,9 +177,7 @@ class DefinitionViewController: UIViewController {
         group.forEach { view in
             definitionsStack.addArrangedSubview(view)
         }
-        
     }
-    
 }
 
 extension DefinitionViewController {
@@ -164,6 +189,7 @@ extension DefinitionViewController {
     
 }
 
+//MARK: - Delegates
 extension DefinitionViewController: NewSearchDelegate {
     func popScreen() {
         self.coordinator?.popToRoot()

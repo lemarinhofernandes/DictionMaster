@@ -27,9 +27,7 @@ class DefinitionsView: UIView {
     init(cellNum: Int, partOfSpeech: String, definition: String, example: String?) {
         super.init(frame: .zero)
         setupUI()
-        let num = String(describing: cellNum)
-        definitionLabel.text = "\(num)) [\(partOfSpeech)] \(definition)"
-        
+        setupDefinitionLabel(cellNum, partOfSpeech, definition)
         setupStackSubviews(example: example)
     }
     
@@ -63,11 +61,28 @@ class DefinitionsView: UIView {
         guard let example = example else { return }
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.text = "•\(example)"
+            label.text = "• \(example)"
             label.numberOfLines = 0
             label.font = UIFont.DMRegular16()
         label.textColor = .DMstandardWord()
             examplesStack.addArrangedSubview(label)
     }
     
+}
+
+extension DefinitionsView {
+    func setupDefinitionLabel(_ num: Int, _ partOfSpeech: String, _ definition: String) {
+        let num = String(describing: num)
+        
+        let mainString = "\(num)) [\(partOfSpeech)] \(definition)"
+        let attributedText = NSMutableAttributedString(string: mainString)
+        let fontSizeAttribute = [NSAttributedString.Key.foregroundColor: UIColor.DMstandardWord()]
+        attributedText.addAttributes(fontSizeAttribute, range: NSRange(location: 0, length: mainString.count))
+        
+        let blueCollor = [NSAttributedString.Key.foregroundColor: UIColor.DMalternativeWord()]
+        let unlimited = (mainString as NSString).range(of: "[\(partOfSpeech)]")
+        attributedText.addAttributes(blueCollor, range: unlimited)
+        
+        definitionLabel.attributedText = attributedText
+    }
 }

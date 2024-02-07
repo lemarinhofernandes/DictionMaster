@@ -158,8 +158,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -267,8 +267,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -360,8 +360,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -376,8 +376,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -471,8 +471,8 @@
             filePath = "DictionMaster/ViewModels/SearchViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "playAudio(with:)"
             landmarkType = "7">
             <Locations>
@@ -521,6 +521,21 @@
                   endingLineNumber = "51"
                   offsetFromSymbolStart = "280">
                </Location>
+               <Location
+                  uuid = "3EF0BEC4-25C5-4F32-824B-4E1A3EBB1EF9 - 536ec682593a9742"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "280">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -534,8 +549,8 @@
             filePath = "DictionMaster/ViewModels/SearchViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "playAudio(with:)"
             landmarkType = "7">
             <Locations>
@@ -584,6 +599,21 @@
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "368">
                </Location>
+               <Location
+                  uuid = "2B8C38C3-A2EC-489E-94DF-37B6B8E84627 - 536ec682593a97ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "368">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -597,8 +627,8 @@
             filePath = "DictionMaster/ViewModels/SearchViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "playAudio(with:)"
             landmarkType = "7">
             <Locations>
@@ -647,6 +677,21 @@
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "796">
                </Location>
+               <Location
+                  uuid = "178CAA33-9642-4EBD-8D03-FB3B74BB9190 - 536ec682593a9953"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "796">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -660,8 +705,8 @@
             filePath = "DictionMaster/ViewModels/SearchViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "playAudio(with:)"
             landmarkType = "7">
             <Locations>
@@ -710,68 +755,20 @@
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "796">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32DA2E73-2863-460D-81FA-8D3B9F2B887E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DictionMaster/ViewControllers/DefinitionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "configureContainerView(partOfSpeech:definition:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "32DA2E73-2863-460D-81FA-8D3B9F2B887E - c3a9be050d438c5e"
+                  uuid = "2D9AE945-09FA-4CDB-9D0D-DF6180496722 - 536ec682593a9953"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DictionMaster.DefinitionViewController.configureContainerView(partOfSpeech: Swift.Optional&lt;Swift.String&gt;, definition: Swift.Optional&lt;Swift.Array&lt;DictionMaster.Definition&gt;&gt;) -&gt; ()"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
                   moduleName = "DictionMaster"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewControllers/DefinitionViewController.swift"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "248">
-               </Location>
-               <Location
-                  uuid = "32DA2E73-2863-460D-81FA-8D3B9F2B887E - c3a9be050d438c5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DictionMaster.DefinitionViewController.configureContainerView(partOfSpeech: Swift.Optional&lt;Swift.String&gt;, definition: Swift.Optional&lt;Swift.Array&lt;DictionMaster.Definition&gt;&gt;) -&gt; ()"
-                  moduleName = "DictionMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewControllers/DefinitionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "32DA2E73-2863-460D-81FA-8D3B9F2B887E - c3a9be050d438c5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DictionMaster.DefinitionViewController.configureContainerView(partOfSpeech: Swift.Optional&lt;Swift.String&gt;, definition: Swift.Optional&lt;Swift.Array&lt;DictionMaster.Definition&gt;&gt;) -&gt; ()"
-                  moduleName = "DictionMaster"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewControllers/DefinitionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "176">
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "796">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -786,8 +783,8 @@
             filePath = "DictionMaster/Repositories/SearchRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "get(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -802,8 +799,8 @@
             filePath = "DictionMaster/ViewControllers/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "callDefinitionViewController(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -852,6 +849,21 @@
                   startingLineNumber = "28"
                   endingLineNumber = "28"
                   offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "EA11AFF3-EE2C-4918-928E-BE03D69E9E9A - d53a68db18f2c084"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.MainCoordinator.goToDefinitions(with: Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Coordinators/MainCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "620">
                </Location>
             </Locations>
          </BreakpointContent>

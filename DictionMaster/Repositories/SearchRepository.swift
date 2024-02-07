@@ -8,15 +8,10 @@
 import Foundation
 import Alamofire
 
-class SearchRepository {
-    private var baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
-    
-    init() {
-        
-    }
+final class SearchRepository {
     
     func get(_ term: String, completion: @escaping (Result<DefinitionModel, ErrorsEnum>) -> Void) {
-        let url = baseURL + term
+        let url = DMConstants.baseUrl + term
         let cachedTerm = UserDefaults.standard.codableObject(dataType: DefinitionModel.self, key: term)
         
         if let cachedTerm = cachedTerm {
@@ -44,7 +39,7 @@ class SearchRepository {
     }
     
     private func shouldMakeRequest() -> Bool {
-        let requestCache = UserDefaults.standard.codableObject(dataType: RequestCache.self, key: nil)
+        let requestCache = UserDefaults.standard.codableObject(dataType: RequestCache.self, key: DMConstants.kCache)
         let timesCalled = requestCache?.timesCalled ?? 0
         
         guard let _ = requestCache else {
@@ -66,6 +61,6 @@ class SearchRepository {
         let date = dateFormatter.string(from: Date())
 
         let codableObject = RequestCache(date: date, timesCalled: timesCalled)
-        UserDefaults.standard.setCodableObject(codableObject, key: nil)
+        UserDefaults.standard.setCodableObject(codableObject, key: DMConstants.kCache)
     }
 }

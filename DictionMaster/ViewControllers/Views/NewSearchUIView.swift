@@ -38,7 +38,7 @@ class NewSearchUIView: UIView {
     private let newSearchSubtitle: UILabel = {
         let e = UILabel()
         e.font = UIFont.DMRegular16()
-        e.text = "Try another search now"
+        e.text = "Try another search now!"
         e.textColor = .black
         return e
     }()
@@ -67,7 +67,11 @@ class NewSearchUIView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupUI() {
+    public func setTitleText(with title: String) {
+        newSearchTitle.text = "That's it for \"\(title)\"!"
+    }
+    
+    private func setupUI() {
         self.backgroundColor = .white
         
         [paddingView, separator, newSearchButton].forEach {

@@ -12,14 +12,21 @@ protocol ViewModelDelegate {
     func callDefinitionViewController(with definition: DefinitionModel)
     func callPaywallViewController()
     func displayAlert(with text: String)
+    func toggleIndicator(for isLoading: Bool)
 }
 
 class SearchViewModel {
+    weak var coordinator: MainCoordinator?
+    private let repository = SearchRepository()
     var player: AVPlayer?
     var playerItem:AVPlayerItem?
-    private let repository = SearchRepository()
     var delegate: ViewModelDelegate?
-    weak var coordinator: MainCoordinator?
+    private var isLoading: Bool = false {
+        didSet {
+            delegate?.toggleIndicator(for: self.isLoading)
+        }
+    }
+    
     
     public static let shared = SearchViewModel()
     
@@ -28,14 +35,21 @@ class SearchViewModel {
     }
     
     func getDefinition(for term: String) {
+        isLoading = true
+        
         self.repository.get(term, completion: { [weak self] result in
             switch result {
             case .success(let value):
                 self?.delegate?.callDefinitionViewController(with: value)
+                self?.isLoading = false
             case .failure(let error):
                 self?.handleError(with: error)
+                self?.isLoading = false
+                
             }
         })
+        
+        
     }
     
     func handleError(with error: ErrorsEnum) {

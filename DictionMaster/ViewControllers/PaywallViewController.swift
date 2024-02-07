@@ -8,8 +8,7 @@
 import UIKit
 
 class PaywallViewController: UIViewController {
-    weak var coordinator: MainCoordinator?
-    
+    //MARK: - Views
     private let scrollView: UIScrollView = {
         let e = UIScrollView()
         e.showsVerticalScrollIndicator = false
@@ -40,22 +39,18 @@ class PaywallViewController: UIViewController {
     
     private let subscribeLabel: UILabel = {
         let e = UILabel()
-        e.text = "Subscribe now to get unlimited \nsearches and full access to all \nfeatures."
         e.numberOfLines = 0
         e.contentMode = .center
         e.textAlignment = .center
-        e.textColor = .DMstandardWord()
         e.font = UIFont.DMBold20()
         return e
     }()
     
     private let cancelAnytimeLabel: UILabel = {
         let e = UILabel()
-        e.text = "Try 7 Days Free, then only $19,99 per year. \nCancel anytime."
         e.numberOfLines = 0
         e.contentMode = .center
         e.textAlignment = .center
-        e.font = UIFont.DMBold16()
         e.textColor = .DMstandardWord()
         return e
     }()
@@ -73,6 +68,10 @@ class PaywallViewController: UIViewController {
         return e
     }()
     
+    //MARK: - Properties
+    weak var coordinator: MainCoordinator?
+    
+    //MARK: - Lifecycle
     convenience init() {
         self.init(nibName:nil, bundle:nil)
         
@@ -96,6 +95,7 @@ class PaywallViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    //MARK: - Lifecycle
     func setupUI() {
         view.backgroundColor = .white
         
@@ -140,10 +140,45 @@ class PaywallViewController: UIViewController {
             subscribeButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -18),
             subscribeButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
         ])
+        
+        setCancelAnytimeLabel()
+        setSubscribeLabel()
+    }
+    
+    func setSubscribeLabel() {
+        let mainString = "Subscribe now to get unlimited \nsearches and full access to all \nfeatures."
+        let attributedText = NSMutableAttributedString(string: mainString)
+        let colorAttribute = [NSAttributedString.Key.foregroundColor: UIColor.DMstandardWord()]
+        attributedText.addAttributes(colorAttribute, range: NSRange(location: 0, length: mainString.count))
+        
+        let blueCollor = [NSAttributedString.Key.foregroundColor: UIColor.DMButton()]
+        let unlimited = (mainString as NSString).range(of: "unlimited")
+        attributedText.addAttributes(blueCollor, range: unlimited)
+        
+        let allFeatures = (mainString as NSString).range(of: "all \nfeatures.")
+        attributedText.addAttributes(blueCollor, range: allFeatures)
+        
+        subscribeLabel.attributedText = attributedText
+    }
+    
+    func setCancelAnytimeLabel() {
+        let mainString = "Try 7 Days Free, then only $19,99 per year. \nCancel anytime."
+        let attributedText = NSMutableAttributedString(string: mainString)
+        let fontSizeAttribute = [NSAttributedString.Key.font: UIFont.DMRegular16()]
+        attributedText.addAttributes(fontSizeAttribute, range: NSRange(location: 0, length: mainString.count))
+        
+        let boldAttribute = [NSAttributedString.Key.font: UIFont.DMBold16()]
+        let tryRange = (mainString as NSString).range(of: "Try 7 Days Free")
+        attributedText.addAttributes(boldAttribute, range: tryRange)
+        
+        let priceRange = (mainString as NSString).range(of: "$19,99")
+        attributedText.addAttributes(boldAttribute, range: priceRange)
+        cancelAnytimeLabel.attributedText = attributedText
     }
 
 }
 
+//MARK: - Helpers
 extension PaywallViewController {
     @objc
     func handleSubscribe() {
