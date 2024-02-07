@@ -55,18 +55,7 @@ class PaywallViewController: UIViewController {
         return e
     }()
     
-    private lazy var subscribeButton: UIButton = {
-        let e = UIButton()
-        e.translatesAutoresizingMaskIntoConstraints = false
-        e.setTitle("SUBSCRIBE", for: .normal)
-        e.backgroundColor = .DMButton()
-        e.titleLabel?.font = .DMBold18()
-        e.contentMode = .center
-        e.layer.cornerRadius = 14
-        e.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        e.addTarget(self, action: #selector(handleSubscribe), for: .touchUpInside)
-        return e
-    }()
+    private let subscribeButton = UIButton.buttonFactory(title: "SUBSCRIBE", self, action: #selector(handleSubscribe), isHidden: false)
     
     //MARK: - Properties
     weak var coordinator: MainCoordinator?

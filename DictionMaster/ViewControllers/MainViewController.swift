@@ -9,6 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    private struct Constants {
+        static let buttonTitle = "SEARCH"
+    }
+    
     //MARK: - Views
     private let backgroundView: UIView = {
         let e = UIView()
@@ -58,18 +62,7 @@ class MainViewController: UIViewController {
         return e
     }()
     
-    private lazy var searchButton: UIButton = {
-        let e = UIButton()
-        e.setTitle("SEARCH", for: .normal)
-        e.titleLabel?.font = UIFont.DMBold18()
-        e.backgroundColor = .DMButton()
-        e.contentMode = .center
-        e.layer.cornerRadius = 14
-        e.isHidden = true
-        e.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        e.addTarget(self, action: #selector(handleSeach), for: .touchUpInside)
-        return e
-    }()
+    private lazy var searchButton = UIButton.buttonFactory(title: Constants.buttonTitle, self, action: #selector(handleSeach), isHidden: true)
     
     private let activityIndicator: UIActivityIndicatorView = {
         let e = UIActivityIndicatorView(style: .medium)
@@ -151,7 +144,7 @@ extension MainViewController: ViewModelDelegate {
             activityIndicator.startAnimating()
         case false:
             activityIndicator.stopAnimating()
-            searchButton.setTitle("SEARCH", for: .normal)
+            searchButton.setTitle(Constants.buttonTitle, for: .normal)
         }
     }
     
@@ -186,6 +179,7 @@ extension MainViewController {
         case false:
             self.searchButton.isHidden = true
         }
+        
     }
     
     @objc

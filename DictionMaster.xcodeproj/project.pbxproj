@@ -12,6 +12,7 @@
 		C13342D82B7404C8002200A9 /* DMFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342D72B7404C8002200A9 /* DMFonts.swift */; };
 		C13342DA2B7406D6002200A9 /* DMColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342D92B7406D6002200A9 /* DMColors.swift */; };
 		C13342DC2B743BB5002200A9 /* DMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342DB2B743BB5002200A9 /* DMConstants.swift */; };
+		C13342DE2B743D78002200A9 /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13342DD2B743D78002200A9 /* ButtonFactory.swift */; };
 		C1ACD5312B713E5C009FC2D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5302B713E5C009FC2D9 /* AppDelegate.swift */; };
 		C1ACD5332B713E5C009FC2D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5322B713E5C009FC2D9 /* SceneDelegate.swift */; };
 		C1ACD5352B713E5C009FC2D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5342B713E5C009FC2D9 /* MainViewController.swift */; };
@@ -40,6 +41,7 @@
 		C13342D72B7404C8002200A9 /* DMFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFonts.swift; sourceTree = "<group>"; };
 		C13342D92B7406D6002200A9 /* DMColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMColors.swift; sourceTree = "<group>"; };
 		C13342DB2B743BB5002200A9 /* DMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMConstants.swift; sourceTree = "<group>"; };
+		C13342DD2B743D78002200A9 /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		C1ACD52D2B713E5B009FC2D9 /* DictionMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1ACD5302B713E5C009FC2D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1ACD5322B713E5C009FC2D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		C1ACD54D2B72A11E009FC2D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */,
 				C1ACD54E2B72A12D009FC2D9 /* RequestCache.swift */,
 				C1ACD5532B72A2FF009FC2D9 /* DefinitionModel.swift */,
 			);
@@ -157,11 +160,11 @@
 			children = (
 				C1ACD5662B73F901009FC2D9 /* Fonts */,
 				C1ACD5512B72A142009FC2D9 /* UserDefaultsExtension.swift */,
-				C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */,
 				C1ACD5642B73E93D009FC2D9 /* Coordinator.swift */,
 				C13342D92B7406D6002200A9 /* DMColors.swift */,
 				C13342D72B7404C8002200A9 /* DMFonts.swift */,
 				C13342DB2B743BB5002200A9 /* DMConstants.swift */,
+				C13342DD2B743D78002200A9 /* ButtonFactory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				C1ACD5632B73E90B009FC2D9 /* MainCoordinator.swift in Sources */,
 				C1ACD5652B73E93D009FC2D9 /* Coordinator.swift in Sources */,
 				C1ACD5542B72A2FF009FC2D9 /* DefinitionModel.swift in Sources */,
+				C13342DE2B743D78002200A9 /* ButtonFactory.swift in Sources */,
 				C1ACD5352B713E5C009FC2D9 /* MainViewController.swift in Sources */,
 				C1ACD54F2B72A12D009FC2D9 /* RequestCache.swift in Sources */,
 				C1ACD5522B72A142009FC2D9 /* UserDefaultsExtension.swift in Sources */,

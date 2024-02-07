@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 final class SearchRepository {
-    
     func get(_ term: String, completion: @escaping (Result<DefinitionModel, ErrorsEnum>) -> Void) {
         let url = DMConstants.baseUrl + term
         let cachedTerm = UserDefaults.standard.codableObject(dataType: DefinitionModel.self, key: term)
@@ -34,7 +33,6 @@ final class SearchRepository {
             completion(.failure(.LimitError))
             break
         }
-        
         
     }
     

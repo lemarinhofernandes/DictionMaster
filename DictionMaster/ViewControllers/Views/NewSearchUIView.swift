@@ -39,22 +39,11 @@ class NewSearchUIView: UIView {
         let e = UILabel()
         e.font = UIFont.DMRegular16()
         e.text = "Try another search now!"
-        e.textColor = .black
+        e.textColor = .DMstandardWord()
         return e
     }()
     
-    private lazy var newSearchButton: UIButton = {
-        let e = UIButton()
-        e.translatesAutoresizingMaskIntoConstraints = false
-        e.setTitle("NEW SEARCH", for: .normal)
-        e.titleLabel?.font = UIFont.DMBold18()
-        e.backgroundColor = .DMButton()
-        e.contentMode = .center
-        e.layer.cornerRadius = 14
-        e.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        e.addTarget(self, action: #selector(handleNewSeach), for: .touchUpInside)
-        return e
-    }()
+    private let newSearchButton = UIButton.buttonFactory(title: "NEW SEARCH", self, action: #selector(handleNewSeach), isHidden: false)
     
     weak var delegate: NewSearchDelegate?
 
@@ -107,6 +96,9 @@ class NewSearchUIView: UIView {
         ])
     }
     
+}
+
+extension NewSearchUIView {
     @objc
     func handleNewSeach() {
         delegate?.popScreen()

@@ -15,7 +15,7 @@ protocol ViewModelDelegate {
     func toggleIndicator(for isLoading: Bool)
 }
 
-class SearchViewModel {
+final class SearchViewModel {
     weak var coordinator: MainCoordinator?
     private let repository = SearchRepository()
     var player: AVPlayer?
