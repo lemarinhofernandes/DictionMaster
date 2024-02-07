@@ -11,6 +11,7 @@ import AVKit
 protocol ViewModelDelegate {
     func callDefinitionViewController(with definition: DefinitionModel)
     func callPaywallViewController()
+    func displayAlert(with text: String)
 }
 
 class SearchViewModel {
@@ -39,7 +40,7 @@ class SearchViewModel {
     func handleError(with error: ErrorsEnum) {
         switch error {
         case .NetworkError:
-            print("AF network error")
+            delegate?.displayAlert(with: "AF network error")
         case .LimitError:
             delegate?.callPaywallViewController()
         }
@@ -49,11 +50,11 @@ class SearchViewModel {
         let optionalUrl = URL(string: url)
         guard let url = optionalUrl else { return }
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-        } catch {
-            print("AVAudioSessionCategoryPlayback not work")
-        }
+//        do {
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+//        } catch {
+//            print("AVAudioSessionCategoryPlayback not work")
+//        }
         
         do {
             self.playerItem = AVPlayerItem(url: url)

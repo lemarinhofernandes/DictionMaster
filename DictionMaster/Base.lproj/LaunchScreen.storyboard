@@ -18,40 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Luís Eduardo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYU-nc-QkD">
-                                <rect key="frame" x="130.66666666666666" y="778.66666666666663" width="132.99999999999997" height="23.333333333333371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iYU-nc-QkD" secondAttribute="height" multiplier="132:23" id="Hku-QO-ibN"/>
-                                </constraints>
+                                <rect key="frame" x="130.66666666666669" y="779.66666666666663" width="131.66666666666669" height="22.333333333333371"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="ZSF-Wv-h34">
-                                <rect key="frame" x="115" y="393" width="200" height="46"/>
+                                <rect key="frame" x="115" y="381" width="200" height="62"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ZSF-Wv-h34" secondAttribute="height" multiplier="100:23" id="Z4I-kU-KwX"/>
+                                    <constraint firstAttribute="width" secondItem="ZSF-Wv-h34" secondAttribute="height" multiplier="100:31" id="qk2-du-zkd"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-Xx-KCl">
-                                <rect key="frame" x="137" y="286" width="120" height="120"/>
+                                <rect key="frame" x="127" y="270" width="139" height="137"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="tGC-Xx-KCl" secondAttribute="height" multiplier="1:1" id="M0U-8J-aFO"/>
-                                    <constraint firstAttribute="width" secondItem="tGC-Xx-KCl" secondAttribute="height" multiplier="1:1" id="vu1-68-jYz"/>
+                                    <constraint firstAttribute="width" secondItem="tGC-Xx-KCl" secondAttribute="height" multiplier="70:69" id="2Bm-y6-wx4"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZSF-Wv-h34" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="334" id="1b7-Fm-sbq"/>
-                            <constraint firstItem="ZSF-Wv-h34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="6wU-cP-u9t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZSF-Wv-h34" secondAttribute="trailing" constant="78" id="AkV-SE-gaI"/>
-                            <constraint firstItem="tGC-Xx-KCl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="227" id="HFU-TQ-RHR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iYU-nc-QkD" secondAttribute="trailing" constant="129.33000000000001" id="OiF-pz-LRl"/>
-                            <constraint firstItem="iYU-nc-QkD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130.66999999999999" id="X0W-S1-8R0"/>
-                            <constraint firstItem="tGC-Xx-KCl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="aGd-7R-ijk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tGC-Xx-KCl" secondAttribute="trailing" constant="136" id="akR-v5-n0g"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iYU-nc-QkD" secondAttribute="bottom" constant="16" id="lLe-gH-u7g"/>
+                            <constraint firstItem="iYU-nc-QkD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="62g-Qs-l1U"/>
+                            <constraint firstItem="tGC-Xx-KCl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7Vk-W6-y2d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZSF-Wv-h34" secondAttribute="trailing" constant="78" id="OOF-cd-a2w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iYU-nc-QkD" secondAttribute="bottom" constant="16" id="QXp-CT-nRb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tGC-Xx-KCl" secondAttribute="trailing" constant="127" id="VP0-VI-GD9"/>
+                            <constraint firstItem="tGC-Xx-KCl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="211" id="XAf-U0-MjL"/>
+                            <constraint firstItem="ZSF-Wv-h34" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="322" id="cng-Lw-nFR"/>
+                            <constraint firstItem="ZSF-Wv-h34" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="mUc-6b-rto"/>
                         </constraints>
                     </view>
                 </viewController>

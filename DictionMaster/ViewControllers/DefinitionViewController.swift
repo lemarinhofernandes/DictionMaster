@@ -12,7 +12,6 @@ class DefinitionViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let e = UIScrollView()
         e.showsVerticalScrollIndicator = false
-        e.translatesAutoresizingMaskIntoConstraints = false
         return e
     }()
     
@@ -28,7 +27,6 @@ class DefinitionViewController: UIViewController {
     private let pronouciationLabel: UILabel = {
         let e = UILabel()
         e.font = UIFont.systemFont(ofSize: 22)
-        e.text = "/ˌedʒuˈkeɪʃn/"
         e.textColor = .black
         return e
     }()
@@ -54,6 +52,8 @@ class DefinitionViewController: UIViewController {
         return e
     }()
     
+    private let newSearchView = NewSearchUIView()
+    
     private var soundUrl: String?
     private var definitionIndex = 0
     
@@ -62,7 +62,8 @@ class DefinitionViewController: UIViewController {
         
         self.wordLabel.text = value.word
         self.pronouciationLabel.text = value.phonetic
-        self.soundUrl = value.phonetics?[1].audio
+        handleUrl(phonetics: value.phonetics)
+        
         value.meanings?.forEach({ meaning in
             configureContainerView(partOfSpeech: meaning.partOfSpeech, definition: meaning.definitions)
         })
@@ -78,7 +79,7 @@ class DefinitionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupScrollView()
+        setupUI()
         
     }
     
@@ -86,21 +87,34 @@ class DefinitionViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    private func setupScrollView() {
+    private func setupUI() {
         view.backgroundColor = .white
-        let margins = view.layoutMarginsGuide
-        view.addSubview(scrollView)
+        newSearchView.delegate = self
+        
+        [scrollView, newSearchView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+        
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
+            scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: newSearchView.topAnchor),
+            
+            newSearchView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            newSearchView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            newSearchView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+        ])
+        
+        
+        
         [wordLabel, soundButton, pronouciationLabel, definitionsStack].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview($0)
         }
         
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            scrollView.topAnchor.constraint(equalTo: margins.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
-            
             wordLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
             wordLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             
@@ -117,26 +131,46 @@ class DefinitionViewController: UIViewController {
             definitionsStack.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
     }
+    
     private func configureContainerView(partOfSpeech: String?, definition: [Definition]?) {
         guard let partOfSpeech = partOfSpeech, let definition = definition else { return }
         var group: [UIView] = []
         
-        for i in 0..<definition.count {
+        definition.forEach { definition in
             definitionIndex += 1
-            let unwrappedDefinition = definition[i].definition ?? ""
-            let view = DefinitionsView(cellNum: definitionIndex, partOfSpeech: partOfSpeech, definition: unwrappedDefinition, example: definition[i].example)
+            let unwrappedDefinition = definition.definition ?? ""
+            let view = DefinitionsView(cellNum: definitionIndex, partOfSpeech: partOfSpeech, definition: unwrappedDefinition, example: definition.example)
             group.append(view)
         }
         
         group.forEach { view in
             definitionsStack.addArrangedSubview(view)
         }
+        
     }
     
+}
+
+extension DefinitionViewController {
     @objc
     func handleSoundButton() {
         guard let url = soundUrl else { return }
         SearchViewModel.shared.playAudio(with: url)
+    }
+    
+    func handleUrl(phonetics: [Phonetic]?) {
+        phonetics?.forEach {
+            if let phonetic = $0.audio, !phonetic.isEmpty {
+                self.soundUrl = phonetic
+            }
+        }
+    }
+    
+}
+
+extension DefinitionViewController: NewSearchDelegate {
+    func popScreen() {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

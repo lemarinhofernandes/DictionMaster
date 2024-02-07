@@ -21,6 +21,7 @@
 		C1ACD5592B72E9FF009FC2D9 /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD5582B72E9FF009FC2D9 /* PaywallViewController.swift */; };
 		C1ACD55B2B72EACC009FC2D9 /* ErrorsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */; };
 		C1ACD55E2B73260D009FC2D9 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55D2B73260D009FC2D9 /* DefinitionsView.swift */; };
+		C1ACD5602B73AFED009FC2D9 /* NewSearchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */; };
 		E73C9CC110ACE48DA78279A8 /* Pods_DictionMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11D576CCDD7719201C1344 /* Pods_DictionMaster.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		C1ACD5582B72E9FF009FC2D9 /* PaywallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
 		C1ACD55A2B72EACC009FC2D9 /* ErrorsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsEnum.swift; sourceTree = "<group>"; };
 		C1ACD55D2B73260D009FC2D9 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
+		C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchUIView.swift; sourceTree = "<group>"; };
 		EA11D576CCDD7719201C1344 /* Pods_DictionMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C1ACD55D2B73260D009FC2D9 /* DefinitionsView.swift */,
+				C1ACD55F2B73AFED009FC2D9 /* NewSearchUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				C1ACD5452B727686009FC2D9 /* SearchViewModel.swift in Sources */,
 				C1ACD5332B713E5C009FC2D9 /* SceneDelegate.swift in Sources */,
 				C1ACD5592B72E9FF009FC2D9 /* PaywallViewController.swift in Sources */,
+				C1ACD5602B73AFED009FC2D9 /* NewSearchUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -113,6 +113,12 @@ class MainViewController: UIViewController {
 
 //MARK: - Delegates
 extension MainViewController: ViewModelDelegate {
+    func displayAlert(with text: String) {
+        let alert = UIAlertController(title: "Warning", message: text, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func callPaywallViewController() {
         self.navigationController?.pushViewController(PaywallViewController(), animated: true)
     }
