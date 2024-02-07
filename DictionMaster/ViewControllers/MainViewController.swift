@@ -11,17 +11,23 @@ class MainViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     
     //MARK: - Views
-    private lazy var languageLabel: UILabel = {
+    private let backgroundView: UIView = {
+        let e = UIView()
+        e.layer.cornerRadius = 20
+        e.backgroundColor = .DMstandardBackground()
+        return e
+    }()
+    
+    private let languageLabel: UILabel = {
         let e = UILabel()
         e.text = "ENGLISH"
         e.textColor = .DMstandardWord()
         e.font = UIFont.DMRegular18()
-        e.textColor = .black
         e.translatesAutoresizingMaskIntoConstraints = false
         return e
     }()
     
-    private lazy var languageImageView: UIImageView = {
+    private let languageImageView: UIImageView = {
         let e = UIImageView()
         let image = UIImage(named: "en-flag")
         e.image = image
@@ -44,7 +50,6 @@ class MainViewController: UIViewController {
     
     private lazy var inputTextField: UITextField = {
         let e = UITextField()
-        e.translatesAutoresizingMaskIntoConstraints = false
         e.placeholder = "Type a word"
         e.contentMode = .center
         e.textAlignment = .center
@@ -56,7 +61,6 @@ class MainViewController: UIViewController {
     
     private lazy var searchButton: UIButton = {
         let e = UIButton()
-        e.translatesAutoresizingMaskIntoConstraints = false
         e.setTitle("SEARCH", for: .normal)
         e.titleLabel?.font = UIFont.DMBold18()
         e.backgroundColor = .DMButton()
@@ -81,16 +85,29 @@ class MainViewController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func setupUI() {
         self.view.backgroundColor = .white
-        view.addSubview(inputTextField)
-        view.addSubview(searchButton)
-        view.addSubview(vStack)
+        
+        [inputTextField, searchButton, backgroundView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+        backgroundView.addSubview(vStack)
         
         NSLayoutConstraint.activate([
-            vStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            vStack.widthAnchor.constraint(equalToConstant: 105),
-            vStack.heightAnchor.constraint(equalToConstant: 40),
+            backgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundView.widthAnchor.constraint(equalToConstant: 125),
+            backgroundView.heightAnchor.constraint(equalToConstant: 40),
+            
+            vStack.topAnchor.constraint(equalTo: backgroundView.topAnchor),
+            vStack.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            vStack.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            vStack.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor),
+            
             
             inputTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             inputTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -103,7 +120,7 @@ class MainViewController: UIViewController {
         bottomButtonConstraint = searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         bottomButtonConstraint.isActive = true
         
-        languageTopConstraint = self.vStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        languageTopConstraint = self.backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         languageTopConstraint.isActive = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
