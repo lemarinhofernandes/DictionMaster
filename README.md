@@ -16,6 +16,7 @@ We're using:
 - delegates
 - factory
 - repository
+- singleton
 - UIKit (viewCode)
 - auto layout
 - Pods (Alamofire)
