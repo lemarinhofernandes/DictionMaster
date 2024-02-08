@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
         var soundUrl = String()
         
         definition[0].phonetics?.forEach {
-            if let phonetic = $0.audio, !phonetic.isEmpty {
+            if let phonetic = $0.audio, phonetic.count > 1 {
                 soundUrl = phonetic
             }
         }

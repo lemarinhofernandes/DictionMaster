@@ -426,6 +426,21 @@
                   endingLineNumber = "39"
                   offsetFromSymbolStart = "1068">
                </Location>
+               <Location
+                  uuid = "A49F7722-E1FF-4FED-AD05-C10CD04E1F39 - d85bd86bef429196"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchRepository.get(_: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;DictionMaster.DefinitionModelElement&gt;, DictionMaster.ErrorsEnum&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/Repositories/SearchRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1012">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -536,6 +551,21 @@
                   endingLineNumber = "62"
                   offsetFromSymbolStart = "280">
                </Location>
+               <Location
+                  uuid = "3EF0BEC4-25C5-4F32-824B-4E1A3EBB1EF9 - 536ec682593a97af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "288">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -613,6 +643,21 @@
                   startingLineNumber = "66"
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "2B8C38C3-A2EC-489E-94DF-37B6B8E84627 - 536ec682593a962b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "380">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -692,6 +737,21 @@
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "796">
                </Location>
+               <Location
+                  uuid = "178CAA33-9642-4EBD-8D03-FB3B74BB9190 - 536ec682593a99bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1232">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -770,6 +830,21 @@
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "796">
                </Location>
+               <Location
+                  uuid = "2D9AE945-09FA-4CDB-9D0D-DF6180496722 - 536ec682593a99bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DictionMaster.SearchViewModel.playAudio(with: Swift.String) -&gt; ()"
+                  moduleName = "DictionMaster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duduzoeras/dev/DictionMaster/DictionMaster/ViewModels/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "1232">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -793,7 +868,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "61C1F74C-11CC-4724-8AD8-2CEEC4AB87DF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionMaster/ViewControllers/MainViewController.swift"
@@ -809,7 +884,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EA11AFF3-EE2C-4918-928E-BE03D69E9E9A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionMaster/Coordinators/MainCoordinator.swift"
@@ -866,6 +941,22 @@
                   offsetFromSymbolStart = "620">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "677325D9-3495-481F-A694-012F47E8EBF2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DictionMaster/Coordinators/MainCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "goToDefinitions(with:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
